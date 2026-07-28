@@ -12,6 +12,7 @@ spec:
     helm:
       values: |
         grafana:
+          adminPassword: Lab010203
           persistence:
             enabled: true
           additionalDataSources:
