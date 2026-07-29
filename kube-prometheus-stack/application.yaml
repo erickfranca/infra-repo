@@ -11,6 +11,10 @@ spec:
     targetRevision: "87.16.1"
     helm:
       values: |
+        prometheus:
+          prometheusSpec:
+            enableFeatures:
+              - exemplar-storage
         grafana:
           adminPassword: Lab010203
           persistence:
@@ -18,10 +22,17 @@ spec:
           additionalDataSources:
             - name: Tempo
               type: tempo
+              uid: tempo
               access: proxy
               url: http://tempo.monitoring.svc.cluster.local:3200
               jsonData:
                 httpMethod: GET
+          sidecar:
+            datasources:
+              exemplarTraceIdDestinations:
+                datasourceUid: tempo
+                traceIdLabelName: trace_id
+                urlDisplayLabel: Ver trace
   destination:
     server: https://kubernetes.default.svc
     namespace: monitoring
