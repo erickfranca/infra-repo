@@ -30,6 +30,9 @@ spec:
               url: http://tempo.monitoring.svc.cluster.local:3200
               jsonData:
                 httpMethod: GET
+                streamingEnabled:
+                  search: false
+                  metrics: false
           sidecar:
             datasources:
               exemplarTraceIdDestinations:
