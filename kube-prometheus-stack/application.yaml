@@ -17,6 +17,9 @@ spec:
               - exemplar-storage
         grafana:
           adminPassword: Lab010203
+          deleteDatasources:
+            - name: Tempo
+              orgId: 1
           persistence:
             enabled: true
           additionalDataSources:
