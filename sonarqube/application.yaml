@@ -12,6 +12,7 @@ spec:
     helm:
       values: |
         edition: "community"
+        monitoringPasscode: "LabMonitoringPasscode123!"
         persistence:
           enabled: true
         resources:
