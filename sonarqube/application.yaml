@@ -11,7 +11,8 @@ spec:
     targetRevision: "2026.4.0"
     helm:
       values: |
-        edition: "community"
+        community:
+          enabled: true
         monitoringPasscode: "LabMonitoringPasscode123!"
         persistence:
           enabled: true
