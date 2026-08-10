@@ -13,50 +13,10 @@ spec:
       values: |
         prometheus:
           prometheusSpec:
-            replicas: 2
-            resources:
-              limits:
-                cpu: 2
-                memory: 4Gi
-              requests:
-                cpu: 500m
-                memory: 2Gi
             enableFeatures:
               - exemplar-storage
-        prometheusOperator:
-          resources:
-            limits:
-              cpu: 200m
-              memory: 256Mi
-            requests:
-              cpu: 100m
-              memory: 128Mi
-        kube-state-metrics:
-          resources:
-            limits:
-              cpu: 100m
-              memory: 128Mi
-            requests:
-              cpu: 50m
-              memory: 64Mi
-        prometheus-node-exporter:
-          resources:
-            limits:
-              cpu: 100m
-              memory: 128Mi
-            requests:
-              cpu: 50m
-              memory: 64Mi
         grafana:
           adminPassword: Lab010203
-          replicas: 2
-          resources:
-            limits:
-              cpu: 1
-              memory: 2Gi
-            requests:
-              cpu: 500m
-              memory: 1Gi
           deleteDatasources:
             - name: Tempo
               orgId: 1
